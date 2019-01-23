@@ -1,0 +1,9 @@
+{% extends 'Wine/base.html' %}
+
+{%  block body %}
+    <ul>
+        {% for winery in all_wineries %}
+            <li><a href="{% url 'Wine:detail' winery.id %}">{{ winery.winery_name }}</a> </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

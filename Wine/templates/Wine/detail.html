@@ -1,0 +1,26 @@
+{% extends 'Wine/base.html' %}
+<title>{% block title %}Wine Details{% endblock %}</title>
+{% block body %}
+    <h1>{{ winery.winery_name }} Winery</h1>
+    <h3>{{ winery.winery_location }}</h3>
+
+    {% if error_message %}
+        <p><strong>{{ error_message }}</strong></p>
+    {% endif %}
+
+        {% csrf_token %}
+        {% for wine in winery.wine_set.all %}
+            <li>{{ wine.wine_name }}</li>
+        {% endfor %}
+{% endblock %}
+
+
+
+
+
+{#<ul>#}
+{#    {% for wine in winery.wine_set.all %}#}
+{#        <li>{{ wine.wine_name }} - {{ wine.wine_varietal }}</li>#}
+{#    {% endfor %}#}
+{#</ul>#}
+
