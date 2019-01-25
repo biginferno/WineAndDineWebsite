@@ -27,6 +27,7 @@ class WineList(APIView):
     def post(self):
         pass
 
+
 class IndexView(generic.ListView):
     template_name = 'Wine/index.html'
     context_object_name = 'all_wineries'
@@ -109,22 +110,22 @@ class UserFormView(View):
 
 
 # from django.shortcuts import render, get_object_or_404
-# from .models import Winery, Wine
+# from .models import Wine, Wine
 #
 #
 # def index(request):
-#     all_wineries = Winery.objects.all()
+#     all_wineries = Wine.objects.all()
 #     context = {'all_wineries': all_wineries}
 #     return render(request, 'Wine/index.html', context)
 #
 #
 # def detail(request, winery_id):
-#     winery = get_object_or_404(Winery, id=winery_id)
+#     winery = get_object_or_404(Wine, id=winery_id)
 #     return render(request, 'Wine/detail.html', {'winery': winery})
 #
 #
 # def favorite(request, winery_id):
-#     winery = get_object_or_404(Winery, id=winery_id)
+#     winery = get_object_or_404(Wine, id=winery_id)
 #     try:
 #         selected_wine = winery.wine_set.get(id=request.POST['wine'])
 #     except (KeyError, Wine.DoesNotExist):

@@ -12,7 +12,6 @@ class Winery(models.Model):
     def get_absolute_url(self):
         return reverse('Wine:detail', kwargs={'pk': self.pk})
 
-
     def __str__(self):
         return self.winery_name + ' - ' + self.winery_location
 
