@@ -2,27 +2,15 @@
 <title>{% block title %} Wine And Dine {% endblock %}</title>
 {%  block body %}
 {#    <div class="scroll">#}
-    <ul>
+    <div class="container">
+        <div class="row" style="display: flex; overflow-x: scroll ">
         {% for winery in all_wineries %}
-            <div class="card-image">
-              <img src="../../static/winery/images/RubyHill.jpg" alt="Avatar" style="width:100%">
-              <div class="container">
-
-                    <li class="#active_state">
-                        <a href="{% url 'Wine:index' %}">
-                            <span class="glyphicon glyphicon-cd" aria-hidden="true"></span>&nbsp; Wineries
-                        </a>
-                    </li>
-                    <li class="#active_state">
-                        <a href="{% url 'Wine:index' %}">
-                            <span class="glyphicon glyphicon-cd" aria-hidden="true"></span>&nbsp; Wineries
-                        </a>
-                    </li>
-
-              </div>
-            </div>
-{#            <li><a href="{% url 'Wine:detail' winery.id %}">{{ winery.winery_name }}</a> </li>#}
+                <div class="card">
+                  <img src="../../static/winery/images/RubyHill.jpg">
+                  <p class="card-text"> {{ winery.winery_name }}</p>
+                </div>
         {% endfor %}
-    </ul>
+        </div>
+    </div>
 {#    </div>#}
 {% endblock %}

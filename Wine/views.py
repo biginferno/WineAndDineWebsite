@@ -32,6 +32,7 @@ class IndexView(generic.ListView):
     template_name = 'Wine/index.html'
     context_object_name = 'all_wineries'
 
+
     def get_queryset(self):
         return Winery.objects.all()
 
@@ -46,9 +47,34 @@ class WineryCreate(CreateView):
     fields = ['winery_name', 'winery_location']
 
 
+class WineCreate(CreateView):
+    model = Wine
+    fields = ['wine_name', 'wine_color', 'wine_varietal',
+              'wine_abv', 'wine_picture']
+
+
+class WineUpdate(UpdateView):
+    model = Wine
+    fields = ['wine_name', 'wine_color', 'wine_varietal',
+              'wine_abv', 'wine_picture']
+
+
+class AddCollection(CreateView):
+    model = Winery
+    fields = ['winery_name', 'wine_name', 'wine_color', 'wine_varietal',
+              'wine_abv', 'wine_picture']
+
+
+class UpdateCollection(UpdateView):
+    model = Winery
+    fields = ['winery_name', 'wine_name', 'wine_color', 'wine_varietal',
+              'wine_abv', 'wine_picture']
+
+
 class WineryUpdate(UpdateView):
     model = Winery
     fields = ['winery_name', 'winery_location']
+
 
 class WineryDelete(DeleteView):
     model = Winery
