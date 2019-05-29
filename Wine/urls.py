@@ -22,7 +22,7 @@ urlpatterns = [
     url(r'^winery/(?P<pk>[0-9]+)/delete/$', views.WineryDelete.as_view(), name='winery-delete'),
 
     # winery/addcollection
-    url(r'^winery/addcollection/$',views.CollectionAdd.as_view(),name='winery-add-collection')
+    url(r'^winery/addcollection/$', views.AddCollection.as_view(), name='winery-add-collection')
 
     # # /winery/winery_id/favorite/
     # url(r'^(?P<winery_id>[0-9]+)/favorite/$', views.favorite, name='favorite'),
